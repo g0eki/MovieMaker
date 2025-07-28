@@ -16,6 +16,8 @@ import com.firstapp.moviemaker.data.storage.MovieMakerStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
+import android.util.Log
+
 class MovieMakerViewModel(application: Application) : AndroidViewModel(application) {
     private val store = MovieMakerStore(application, initial = GameData.moneyOnAccount)
 
@@ -68,8 +70,12 @@ class MovieMakerViewModel(application: Application) : AndroidViewModel(applicati
         }
         val movie =
             Movie(title, directors[directorIndex], actors[actorIndex], budget, genres[genreIndex])
+        Log.i("Moive-Debug", movie.toString())
+        Log.i("Moive-Debug", movieProducedState.toString())
+        Log.i("Moive-Debug", movieProducedState.value.toString())
         movie.produce()
         movieProducedState.value = movie
+        Log.i("Moive-Debug", movieProducedState.value.toString())
         updateBudget(movie.budget)
     }
 
