@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.colorspace.WhitePoint
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -39,7 +41,7 @@ fun StartScreen(onProduceMovie: () -> Unit) {
     }
 }
 
-@Preview
+@Preview(backgroundColor = 0xFFFFFFFF, showBackground = true)
 @Composable
 fun StartScreenPreview() {
     StartScreen {}

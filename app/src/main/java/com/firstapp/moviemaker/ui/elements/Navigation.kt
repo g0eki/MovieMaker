@@ -7,9 +7,18 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.firstapp.moviemaker.ui.MovieMakerViewModel
 
+import android.util.Log
+import androidx.compose.runtime.mutableIntStateOf
+
+
+var cnt = mutableIntStateOf(1)
+
 @Composable
 fun Navigation(viewModel: MovieMakerViewModel = viewModel()) {
     val navController = rememberNavController()
+
+
+    Log.i("Navigation", "Navigation: ${cnt.value}")
 
     MovieProductionErrorScreen(viewModel)
 
@@ -29,4 +38,5 @@ fun Navigation(viewModel: MovieMakerViewModel = viewModel()) {
             ProduceMovieScreen(viewModel)
         }
     }
+    cnt.value = cnt.value + 1
 }

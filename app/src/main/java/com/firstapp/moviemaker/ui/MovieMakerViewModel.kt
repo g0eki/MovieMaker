@@ -70,12 +70,12 @@ class MovieMakerViewModel(application: Application) : AndroidViewModel(applicati
         }
         val movie =
             Movie(title, directors[directorIndex], actors[actorIndex], budget, genres[genreIndex])
-        Log.i("Moive-Debug", movie.toString())
-        Log.i("Moive-Debug", movieProducedState.toString())
-        Log.i("Moive-Debug", movieProducedState.value.toString())
+        // Log.i("Moive-Debug", movie.toString())
+       //  Log.i("Moive-Debug", movieProducedState.toString())
+        //Log.i("Moive-Debug", movieProducedState.value.toString())
         movie.produce()
         movieProducedState.value = movie
-        Log.i("Moive-Debug", movieProducedState.value.toString())
+        // Log.i("Moive-Debug", movieProducedState.value.toString())
         updateBudget(movie.budget)
     }
 

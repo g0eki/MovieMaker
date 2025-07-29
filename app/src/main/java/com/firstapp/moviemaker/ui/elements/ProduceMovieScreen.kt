@@ -52,7 +52,6 @@ import com.firstapp.moviemaker.data.core.Person
 import com.firstapp.moviemaker.ui.MovieMakerViewModel
 import com.firstapp.moviemaker.data.core.Actor
 
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ProduceMovieScreen(viewModel: MovieMakerViewModel = viewModel()) {
@@ -328,6 +327,13 @@ private fun ProduceMovieButton(onProduceMovie: () -> Unit) {
         )
     }
 }
+
+@Preview
+@Composable
+fun ProduceMovieButtonPreview(){
+    ProduceMovieButton(onProduceMovie = {})
+}
+
 
 
 @Composable
